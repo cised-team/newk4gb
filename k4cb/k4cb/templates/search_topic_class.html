@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load url from future %}
+    {% block content %}
+    <div class="content">
+      <div class="container">
+        <div class="page-header">
+          <h2>Classes Search</h2>
+        </div>
+        <form class="form-search">
+            <select placeholder="Select Topic" name="topic_id">
+            {% for topic in topics %}
+                <option value={{topic.id}} {%if topic.id == topic_id %}selected="selected"{% endif %}>{{topic.name}}</option>
+            {% endfor %}
+            </select>
+            
+            <input type="text" class="span2" placeholder="Search in classes" name="search" value={{search|default:""}}>
+            <button type="submit" class="btn"><i class="icon-search"></i> Search</button>
+        </form>
+        <p>
+        <table class="table">
+            <tr>
+                <th>Topic</th>
+                <th>Class Name</th>
+                <th>Dificulty rate</th>
+                <th>Actions</th>
+            </tr>
+            {% for obj in object_list %}
+            <tr>
+                <td>{{obj.topic.name}}</td>
+                <td>{{obj.name}}</td>
+                <td>{{obj.dificulty}}</td>
+                <td><a class="btn" href="#">Subscribe</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        </p>
+      </div>
+    </div>
+    {% endblock content %}

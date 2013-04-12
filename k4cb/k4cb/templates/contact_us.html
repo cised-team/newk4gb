@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load url from future %}
+    {% block content %}
+    <div class="content">
+      <div class="container">
+        <div class="page-header">
+          <h1>Contact us</h1>
+        </div>
+        <div class="row-fluid">
+          <!-- Start: CONTACT US FORM -->
+          <div class="span4 offset1">
+            <div class="page-header">
+              <h2>Quick message</h2>
+            </div>
+            <form class="form-contact-us">
+              <div class="control-group">
+                <div class="controls">
+                  <input type="text" id="inputName" placeholder="Name">
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <input type="text" id="inputEmail" placeholder="Email">
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <textarea id="inputMessage" placeholder="Message"></textarea>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <input type="submit" class="btn btn-primary btn-large" value="Send">
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- End: CONTACT US FORM -->
+          <!-- Start: OFFICES -->
+          <div class="span5 offset1">
+            <div class="page-header">
+              <h2>Offices</h2>
+            </div>
+            <h3>Caribbean</h3>
+            <div>
+              <address class="pull-left">
+                <strong>CISED-Team.</strong><br>
+                Km 2.5 carretera San Antonio,<br>
+                repto. Torrens, la Habana Cuba<br>
+              </address>
+              <div class="pull-right">
+                <div class="bottom-space">
+                  <i class="icon-phone icon-large"></i> (+53) 7837-3810
+                </div>
+                <a href="mailto:jlandrian@uci.cu" class="contact-mail">
+                  <i class="icon-envelope icon-large"></i>
+                </a> jlandrian@uci.cu
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <!-- End: OFFICES -->
+        </div>
+      </div>
+    </div>
+    {% endblock content %}

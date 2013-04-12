@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div id="body" class="about">
+	{% regroup knowledge_list by topic as knowledge_by_topic %}
+	
+	{% for topic_knowledge in knowledge_by_topic %}
+		<h3>Knowledge in {{topic_knowledge.grouper}}</h3>
+		<table>
+		{% for knowledge in topic_knowledge.list %}
+			<tr>
+				<td>{{knowledge.skill}}</td>
+				<td>
+					<div class="progress" style="width:150px;">
+						<div class="bar" style="width: {{knowledge.score}}0%;"></div>
+					</div>
+				</td>
+			</tr>
+		{% endfor %}
+		</table>
+	{% endfor %}
+
+	</div>
+{% endblock content %}
